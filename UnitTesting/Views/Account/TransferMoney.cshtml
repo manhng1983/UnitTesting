@@ -1,0 +1,26 @@
+﻿@model TransferMoneyModel
+@{
+    ViewBag.Title = "TransferMoney";
+}
+
+<h2>Transfer Money</h2>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.SourceAccountNumber)
+        @Html.TextBoxFor(m => m.SourceAccountNumber, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.DestinationAccountNumber)
+        @Html.TextBoxFor(m => m.DestinationAccountNumber, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Amount)
+        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", type="number" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Transfer</button>
+}
